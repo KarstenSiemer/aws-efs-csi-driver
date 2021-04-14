@@ -56,7 +56,7 @@ spec:
             # Uncomment below line to allow access point root directory to be deleted by controller.
             #- --delete-access-point-root-dir
             {{- if .Values.controller.tags }}
-            - --tags={{ include "aws-efs-csi-driver.tags" . }}
+            - --tags={{ include "aws-efs-csi-driver.tags" .Values.controller.tags }}
             {{- end }}
           env:
             - name: CSI_ENDPOINT

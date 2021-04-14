@@ -60,7 +60,7 @@ Create a string out of the map for controller tags flag
 */}}
 {{- define "aws-efs-csi-driver.tags" -}}
 {{- $tags := list -}}
-{{ range $key, $val := .Values.controller.tags }}
+{{ range $key, $val := . }}
 {{- $tags = print $key ":" $val | append $tags -}}
 {{- end -}}
 {{- join " " $tags | quote -}}
