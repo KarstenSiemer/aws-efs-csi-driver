@@ -54,6 +54,9 @@ spec:
             - --logtostderr
             - --v={{ .Values.logLevel }}
             - --delete-access-point-root-dir={{ hasKey .Values.controller "deleteAccessPointRootDir" | ternary .Values.controller.deleteAccessPointRootDir false }}
+            {{- if .Values.controller.tags }}
+            - --tags={{ include "aws-efs-csi-driver.tags" .Values.controller.tags }}
+            {{- end }}
           env:
             - name: CSI_ENDPOINT
               value: unix:///var/lib/csi/sockets/pluginproxy/csi.sock

@@ -85,6 +85,10 @@ controller:
   # Enable if you want the controller to also delete the
   # path on efs when deleteing an access point
   deleteAccessPointRootDir: false
+   # Add additional tags to access points
+  tags: {}
+    # environment: prod
+    # region: us-east-1
 
 storageClasses: []
 # Add StorageClass resources like:
