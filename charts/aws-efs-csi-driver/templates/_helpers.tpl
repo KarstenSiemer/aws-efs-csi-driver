@@ -63,5 +63,5 @@ Create a string out of the map for controller tags flag
 {{ range $key, $val := . }}
 {{- $tags = print $key ":" $val | append $tags -}}
 {{- end -}}
-{{- join " " $tags | quote -}}
+{{- join " " $tags -}}
 {{- end -}}
